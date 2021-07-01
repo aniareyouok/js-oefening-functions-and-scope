@@ -3,14 +3,14 @@
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
 const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
-let cumLaude = 0;
+let TotalStudentsWithCumLaude = 0;
 
 for (i = 0; i < grades.length; i++) {
     if (grades[i] > 7) {
-        cumLaude = cumLaude + 1
+        TotalStudentsWithCumLaude = TotalStudentsWithCumLaude + 1
     }
 }
-console.log(cumLaude);
+console.log(TotalStudentsWithCumLaude);
 
 /* Opdracht  1: Cum Laude */
 
@@ -38,7 +38,21 @@ console.log(cumLaude);
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(array) {
+    let TotalStudentsWithCumLaude = 0;
 
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > 7) {
+            TotalStudentsWithCumLaude = TotalStudentsWithCumLaude + 1
+        }
+    }
+    console.log(TotalStudentsWithCumLaude);
+
+}
+
+cumLaude(grades);
+cumLaude([6, 4, 5]);
+cumLaude([8, 9, 4, 6, 10]);
 
 
 /* Opdracht  2: Gemiddeld cijfer */
