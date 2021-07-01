@@ -9,8 +9,19 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain(email) {
 
+    let indexOfAt = email.indexOf("@");
+    let firstIndexOfDomainName = indexOfAt + 1;
+    let domainName = email.substring(firstIndexOfDomainName);
 
+    console.log(domainName);
+}
+
+getEmailDomain("n.eeken@novi-education.nl");
+getEmailDomain("t.mellink@novi.nl");
+getEmailDomain("a.wiersma@outlook.com");
+getEmailDomain("aniareyouok@riseup.net");
 
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
@@ -21,6 +32,24 @@
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
 
+function typeOfEmail(email) {
+    let indexOfAt = email.indexOf("@");
+    let firstIndexOfDomainName = indexOfAt + 1;
+    let domainName = email.substring(firstIndexOfDomainName);
+
+    if (domainName === "novi.nl") {
+        console.log("Medewerker")
+    } else if (domainName === "novi-education.nl") {
+        console.log("Student")
+    } else {
+        console.log("Extern")
+    }
+}
+
+typeOfEmail("n.eeken@novi-education.nl");
+typeOfEmail("t.mellink@novi.nl");
+typeOfEmail("novi.nlaapjesk@outlook.com");
+typeOfEmail("a.wiersma@outlook.com");
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -34,3 +63,25 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(email) {
+    let whereIsAt = email.search("@");
+    let whereIsDot = email.lastIndexOf(".");
+    let whereIsComma = email.search(",");
+    let lastIndex = email.length - 1;
+    let validate;
+
+    if (whereIsAt !== -1 && whereIsDot !== -1 && whereIsDot !== lastIndex && whereIsComma === -1) {
+        validate = true;
+    } else {
+        validate = false;
+    }
+
+    console.log(validate);
+}
+
+checkEmailValidity("n.eeken@novi.nl")
+checkEmailValidity("tessmellink@novi.nl");
+checkEmailValidity("n.eekenanovi.nl");
+checkEmailValidity("n.eeken@novinl.");
+checkEmailValidity("tessmellink@novi,nl");
