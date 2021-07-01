@@ -63,3 +63,25 @@ typeOfEmail("a.wiersma@outlook.com");
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(email) {
+    let whereIsAt = email.search("@");
+    let whereIsDot = email.lastIndexOf(".");
+    let whereIsComma = email.search(",");
+    let lastIndex = email.length - 1;
+
+    if (whereIsAt !== -1 && whereIsDot !== -1 && whereIsDot !== lastIndex && whereIsComma === -1) {
+
+        console.log("true");
+
+    } else {
+
+        console.log("false");
+    }
+}
+
+checkEmailValidity("n.eeken@novi.nl");
+checkEmailValidity("tessmellink@novi.nl");
+checkEmailValidity("n.eekenanovi.nl");
+checkEmailValidity("n.eeken@novinl.");
+checkEmailValidity("tessmellink@novi,nl");
