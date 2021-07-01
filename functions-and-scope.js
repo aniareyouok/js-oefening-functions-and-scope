@@ -144,21 +144,21 @@ averageGrade([8, 9, 4, 6, 10]);
 
 // ---- Verwachte uitkomst: 9
 
-function TopGrade(array) {
+function highestGrade(array) {
     let currentValue;
-    let highestGrade = 0;
+    let TopGrade = 0;
 
     for (i = 0; i < array.length; i++) {
         currentValue = array[i];
-        if (currentValue > highestGrade) {
-            highestGrade = currentValue;
+        if (currentValue > TopGrade) {
+            TopGrade = currentValue;
         }
     }
 
-    console.log(highestGrade);
+    console.log(TopGrade);
 }
 
-TopGrade(grades);
+highestGrade(grades);
 
 
 /* 3b: Omschrijven tot een herbruikbare functie */
@@ -170,3 +170,6 @@ TopGrade(grades);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+highestGrade([6, 5, 5]);
+highestGrade([8, 9, 4, 6, 10]);
