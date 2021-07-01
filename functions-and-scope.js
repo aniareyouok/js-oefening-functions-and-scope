@@ -61,12 +61,25 @@ cumLaude([8, 9, 4, 6, 10]);
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
 // Schrijf de stapjes om dit te kunnen berekenen eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe wordt een gemiddelde berekend?
+// A: TotalGrades = TotalGrades + grades[i]; Average = TotalGrades / grades.length;
 // * Wat moet ik verzamelen uit de array van cijfers om uiteindelijk een gemiddelde te kunnen berekenen?
+// A: grades[i] en grades.length
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
+// A: for loop
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+let totalGrades = 0;
+let average = 0;
+
+for (i = 0; i < grades.length; i++) {
+    totalGrades = totalGrades + grades[i];
+}
+
+average = totalGrades/grades.length;
+
+console.log(average)
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -78,12 +91,43 @@ cumLaude([8, 9, 4, 6, 10]);
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+function averageGrade(array) {
+    let totalGrades = 0;
+    let average = 0;
+
+    for (i = 0; i < array.length; i++) {
+        totalGrades = totalGrades + array[i];
+    }
+
+    average = totalGrades/array.length;
+
+    console.log(average)
+}
+
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10]);
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+function averageGrade(array) {
+    let totalGrades = 0;
+    let average = 0;
 
+    for (i = 0; i < array.length; i++) {
+        totalGrades = totalGrades + array[i];
+    }
+
+    average = Math.round((totalGrades/array.length)*100)/100;
+
+    console.log(average)
+}
+
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10]);
 
 
 /* Bonusopdracht: hoogste cijfer */
