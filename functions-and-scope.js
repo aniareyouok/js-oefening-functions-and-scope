@@ -3,6 +3,14 @@
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
 const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+let cumLaude = 0;
+
+for (i = 0; i < grades.length; i++) {
+    if (grades[i] > 7) {
+        cumLaude = cumLaude + 1
+    }
+}
+console.log(cumLaude);
 
 /* Opdracht  1: Cum Laude */
 
@@ -10,8 +18,11 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // De administratie moet weten hoeveel studenten er dit blok cum laude zijn afgestudeerd (8 of hoger). Daar moeten namelijk speciale diploma's voor besteld worden.
 // Schrijf de stapjes om dit te kunnen checken eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array checken op deze conditie?
+// A: met een if statement i > 7
 // * Hoe zorg ik ervoor dat dit ook werkt wanneer de array 100 entries bevat?
+// A: for loop laten lopen tot i < grades.length
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
+// A: bijhouden in een nieuwe variabele let cumLaude = 0;
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6
