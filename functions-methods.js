@@ -69,18 +69,18 @@ function checkEmailValidity(email) {
     let whereIsDot = email.lastIndexOf(".");
     let whereIsComma = email.search(",");
     let lastIndex = email.length - 1;
+    let validate;
 
     if (whereIsAt !== -1 && whereIsDot !== -1 && whereIsDot !== lastIndex && whereIsComma === -1) {
-
-        console.log("true");
-
+        validate = true;
     } else {
-
-        console.log("false");
+        validate = false;
     }
+
+    console.log(validate);
 }
 
-checkEmailValidity("n.eeken@novi.nl");
+checkEmailValidity("n.eeken@novi.nl")
 checkEmailValidity("tessmellink@novi.nl");
 checkEmailValidity("n.eekenanovi.nl");
 checkEmailValidity("n.eeken@novinl.");
